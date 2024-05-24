@@ -2,10 +2,25 @@ site_name: Eke PTI Záróvizsga Tételek
 site_url: https://csicsi2000.github.io/zarotetelek/
 theme: 
   name: material
+  features:
+    - search.suggest
+    - search.highlight
+    - content.tabs.link
+    - content.code.annotation
+    - content.code.copy
   palette:
-    scheme: 'slate'
-    #primary: purple
-    accent: light purple
+    - scheme: default
+      toggle:
+        icon: material/toggle-switch-off-outline 
+        name: Switch to dark mode
+      primary: indigo
+      accent: purple 
+    - scheme: slate 
+      toggle:
+        icon: material/toggle-switch
+        name: Switch to light mode    
+      primary: indigo
+      accent: purple
   font:
     text: 'Roboto'
     code: 'Roboto Mono'
