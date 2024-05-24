@@ -10,7 +10,7 @@ theme:
     text: 'Roboto'
     code: 'Roboto Mono'
   logo: 'images/book.png'
-  #favicon: 'images/book.png'
+  favicon: 'images/book.png'
   search: true
 plugins:
   - search
