@@ -1,4 +1,17 @@
 site_name: Eke PTI Záróvizsga Tételek
-site_url: https://mydomain.org/mysite
-theme:
+site_url: https://csicsi2000.github.io/zarotetelek/
+theme: 
   name: material
+  palette:
+    scheme: 'slate'
+    #primary: purple
+    accent: light purple
+  font:
+    text: 'Roboto'
+    code: 'Roboto Mono'
+  logo: 'images/book.png'
+  #favicon: 'images/book.png'
+  search: true
+plugins:
+  - search
+  - awesome-pages
