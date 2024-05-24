@@ -1,4 +1,6 @@
 nav:
+    - Kezdőlap: index.html
+    - Összes tétel.md
     - 1. Tétel
     - 2. Tétel
     - 3. Tétel
