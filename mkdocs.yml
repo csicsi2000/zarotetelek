@@ -1,5 +1,8 @@
 site_name: Eke PTI Záróvizsga Tételek
 site_url: https://csicsi2000.github.io/zarotetelek/
+copyright: '© 2024 csicsi2000'
+repo_url: 'https://github.com/csicsi2000/zarotetelek'
+
 theme: 
   name: material
   features:
