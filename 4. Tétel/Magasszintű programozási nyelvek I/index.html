@@ -1,0 +1,2486 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://csicsi2000.github.io/zarotetelek/4.%20T%C3%A9tel/Magasszint%C5%B1%20programoz%C3%A1si%20nyelvek%20I/">
+      
+      
+        <link rel="prev" href="../../3.%20T%C3%A9tel/Adatszerkezetek%20%C3%A9s%20algoritmusok/">
+      
+      
+        <link rel="next" href="../Oper%C3%A1ci%C3%B3s%20rendszerek/">
+      
+      
+      <link rel="icon" href="../../images/book.png">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.26">
+    
+    
+      
+        <title>Magasszintű programozási nyelvek I - Eke PTI Záróvizsga Tételek</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.6543a935.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#magasszintu-programozasi-nyelvek-i" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Eke PTI Záróvizsga Tételek" class="md-header__button md-logo" aria-label="Eke PTI Záróvizsga Tételek" data-md-component="logo">
+      
+  <img src="../../images/book.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Eke PTI Záróvizsga Tételek
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Magasszintű programozási nyelvek I
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/csicsi2000/zarotetelek" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Eke PTI Záróvizsga Tételek" class="md-nav__button md-logo" aria-label="Eke PTI Záróvizsga Tételek" data-md-component="logo">
+      
+  <img src="../../images/book.png" alt="logo">
+
+    </a>
+    Eke PTI Záróvizsga Tételek
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/csicsi2000/zarotetelek" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../index.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Kezdőlap
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%C3%96sszes%20t%C3%A9tel/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Programtervező informatikus (BSc) szak záróvizsga tételek 2020
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    1. Tétel
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            1. Tétel
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1.%20T%C3%A9tel/Az%20informatika%20logikai%20alapjai/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Az informatika logikai alapjai
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1.%20T%C3%A9tel/Bevezet%C3%A9s%20az%20Informatik%C3%A1ba/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Bevezetés az Informatikába
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    2. Tétel
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            2. Tétel
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2.%20T%C3%A9tel/Adatszerkezetek%20%C3%A9s%20algoritmusok/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Adatszerkezetek és algoritmusok
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2.%20T%C3%A9tel/Magasszint%C5%B1%20programoz%C3%A1si%20nyelvek%20I/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Magasszintű programozási nyelvek I
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    3. Tétel
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            3. Tétel
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3.%20T%C3%A9tel/Adatb%C3%A1zisrendszerek%20I/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Adatbázisrendszerek I.
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3.%20T%C3%A9tel/Adatszerkezetek%20%C3%A9s%20algoritmusok/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Adatszerkezetek és algoritmusok
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    4. Tétel
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            4. Tétel
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Magasszintű programozási nyelvek I
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Magasszintű programozási nyelvek I
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#alaptipusok-valtozok-konstansok-literalok" class="md-nav__link">
+    <span class="md-ellipsis">
+      Alaptípusok, változók, konstansok, literálok
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Alaptípusok, változók, konstansok, literálok">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#alaptipusok" class="md-nav__link">
+    <span class="md-ellipsis">
+      Alaptípusok
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#valtozok" class="md-nav__link">
+    <span class="md-ellipsis">
+      Változók
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#konstansok" class="md-nav__link">
+    <span class="md-ellipsis">
+      Konstansok
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#literalok" class="md-nav__link">
+    <span class="md-ellipsis">
+      Literálok
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#operatorok" class="md-nav__link">
+    <span class="md-ellipsis">
+      Operátorok
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Operátorok">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#aritmetikai-operatorok" class="md-nav__link">
+    <span class="md-ellipsis">
+      Aritmetikai operátorok
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#relacios-operatorok" class="md-nav__link">
+    <span class="md-ellipsis">
+      Relációs operátorok
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#logikai-operatorok" class="md-nav__link">
+    <span class="md-ellipsis">
+      Logikai operátorok
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bitmuveleti-operatorok" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bitműveleti operátorok
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#szelekcios-vezerlesi-szerkezetek" class="md-nav__link">
+    <span class="md-ellipsis">
+      Szelekciós vezérlési szerkezetek
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Szelekciós vezérlési szerkezetek">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#if-else-szerkezet" class="md-nav__link">
+    <span class="md-ellipsis">
+      If-else szerkezet
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#switch-szerkezet" class="md-nav__link">
+    <span class="md-ellipsis">
+      Switch szerkezet
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ciklusok" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ciklusok
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Ciklusok">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#for-ciklus" class="md-nav__link">
+    <span class="md-ellipsis">
+      For ciklus
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#while-ciklus" class="md-nav__link">
+    <span class="md-ellipsis">
+      While ciklus
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#do-while-ciklus" class="md-nav__link">
+    <span class="md-ellipsis">
+      Do-while ciklus
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ertek-es-referenciatipusok-memoriamenedzsmentje-stack-es-heap" class="md-nav__link">
+    <span class="md-ellipsis">
+      Érték- és referenciatípusok memóriamenedzsmentje, stack és heap
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Érték- és referenciatípusok memóriamenedzsmentje, stack és heap">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ertektipusok" class="md-nav__link">
+    <span class="md-ellipsis">
+      Értéktípusok
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#referenciatipusok" class="md-nav__link">
+    <span class="md-ellipsis">
+      Referenciatípusok
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#valtozok-hataskore-es-elettartama" class="md-nav__link">
+    <span class="md-ellipsis">
+      Változók hatásköre és élettartama
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Változók hatásköre és élettartama">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#hataskor-scope" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hatáskör (Scope)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#elettartam-lifetime" class="md-nav__link">
+    <span class="md-ellipsis">
+      Élettartam (Lifetime)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#programozasi-nyelvek-generacioi" class="md-nav__link">
+    <span class="md-ellipsis">
+      Programozási nyelvek generációi
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Programozási nyelvek generációi">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#elso-generacios-nyelvek-1gl" class="md-nav__link">
+    <span class="md-ellipsis">
+      Első generációs nyelvek (1GL)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#masodik-generacios-nyelvek-2gl" class="md-nav__link">
+    <span class="md-ellipsis">
+      Második generációs nyelvek (2GL)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#harmadik-generacios-nyelvek-3gl" class="md-nav__link">
+    <span class="md-ellipsis">
+      Harmadik generációs nyelvek (3GL)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#negyedik-generacios-nyelvek-4gl" class="md-nav__link">
+    <span class="md-ellipsis">
+      Negyedik generációs nyelvek (4GL)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#otodik-generacios-nyelvek-5gl" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ötödik generációs nyelvek (5GL)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#imperativ-es-deklarativ-nyelvek" class="md-nav__link">
+    <span class="md-ellipsis">
+      Imperatív és deklaratív nyelvek
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Imperatív és deklaratív nyelvek">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#imperativ-nyelvek" class="md-nav__link">
+    <span class="md-ellipsis">
+      Imperatív nyelvek
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deklarativ-nyelvek" class="md-nav__link">
+    <span class="md-ellipsis">
+      Deklaratív nyelvek
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Oper%C3%A1ci%C3%B3s%20rendszerek/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Operációs rendszerek
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    5. Tétel
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            5. Tétel
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../5.%20T%C3%A9tel/Architekt%C3%BAr%C3%A1k/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Architektúrák
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../5.%20T%C3%A9tel/Magasszint%C5%B1%20programoz%C3%A1si%20nyelvek%20II/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Magasszintű programozási nyelvek II
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    6. Tétel
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            6. Tétel
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../6.%20T%C3%A9tel/Numerikus%20matematika/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Numerikus matematika
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../6.%20T%C3%A9tel/Oper%C3%A1ci%C3%B3s%20rendszerek/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Operációs rendszerek
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    7. Tétel
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            7. Tétel
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../7.%20T%C3%A9tel/Adatb%C3%A1zisrendszerek%20I/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Adatbázisrendszerek I
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../7.%20T%C3%A9tel/Magasszint%C5%B1%20programoz%C3%A1si%20nyelvek%20II/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Magasszintű programozási nyelvek II
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    8. Tétel
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            8. Tétel
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../8.%20T%C3%A9tel/Ford%C3%ADt%C3%B3programok/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Fordítóprogramok
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../8.%20T%C3%A9tel/Magasszint%C5%B1%20programoz%C3%A1si%20nyelvek%20II/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Magasszintű programozási nyelvek II
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    9. Tétel
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11">
+            <span class="md-nav__icon md-icon"></span>
+            9. Tétel
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../9.%20T%C3%A9tel/A%20rendszerfejleszt%C3%A9s%20technol%C3%B3gi%C3%A1ja/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Rendszerfejlesztés technológiája
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../9.%20T%C3%A9tel/Form%C3%A1lis%20nyelvek/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Formális nyelvek
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12" >
+        
+          
+          <label class="md-nav__link" for="__nav_12" id="__nav_12_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    10. Tétel
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12">
+            <span class="md-nav__icon md-icon"></span>
+            10. Tétel
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../10.%20T%C3%A9tel/H%C3%A1l%C3%B3zati%20architekt%C3%BAr%C3%A1k%20%C3%A9s%20protokollok/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hálózati architektúrák és protokollok
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../10.%20T%C3%A9tel/Szolg%C3%A1ltat%C3%A1s%20orient%C3%A1lt%20programoz%C3%A1s/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Szolgáltatás orientált programozás
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_13" >
+        
+          
+          <label class="md-nav__link" for="__nav_13" id="__nav_13_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    11. Tétel
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_13_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_13">
+            <span class="md-nav__icon md-icon"></span>
+            11. Tétel
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../11.%20T%C3%A9tel/A%20rendszerfejleszt%C3%A9s%20technol%C3%B3gi%C3%A1ja/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    A rendszerfejlesztés technológiája
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../11.%20T%C3%A9tel/Az%20informatika%20logikai%20alapjai/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Az informatika logikai alapjai
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_14" >
+        
+          
+          <label class="md-nav__link" for="__nav_14" id="__nav_14_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Szoftverfejlesztő informatikus specializáció
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_14_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_14">
+            <span class="md-nav__icon md-icon"></span>
+            Szoftverfejlesztő informatikus specializáció
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_14_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_14_1" id="__nav_14_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    12. Tétel
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_14_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_14_1">
+            <span class="md-nav__icon md-icon"></span>
+            12. Tétel
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Szoftverfejleszt%C5%91%20informatikus%20specializ%C3%A1ci%C3%B3/12.%20T%C3%A9tel/Adatb%C3%A1zisrendszerek%20II/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Adatbázisrendszerek II.: A PL/SQL alapjai
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Szoftverfejleszt%C5%91%20informatikus%20specializ%C3%A1ci%C3%B3/12.%20T%C3%A9tel/Bevezet%C3%A9s%20a%20sz%C3%A1m%C3%ADt%C3%B3g%C3%A9pi%20grafik%C3%A1ba/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Bevezetés a számítógépi grafikába
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_14_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_14_2" id="__nav_14_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    13. Tétel
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_14_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_14_2">
+            <span class="md-nav__icon md-icon"></span>
+            13. Tétel
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Szoftverfejleszt%C5%91%20informatikus%20specializ%C3%A1ci%C3%B3/13.%20T%C3%A9tel/Programoz%C3%A1si%20technol%C3%B3gi%C3%A1k/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Programozási technológiák
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Szoftverfejleszt%C5%91%20informatikus%20specializ%C3%A1ci%C3%B3/13.%20T%C3%A9tel/Webprogramoz%C3%A1s%20II/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Webprogramozás II.
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_14_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_14_3" id="__nav_14_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    14. Tétel
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_14_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_14_3">
+            <span class="md-nav__icon md-icon"></span>
+            14. Tétel
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Szoftverfejleszt%C5%91%20informatikus%20specializ%C3%A1ci%C3%B3/14.%20T%C3%A9tel/Adatb%C3%A1zisrendszerek%20II/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Adatbázisrendszerek II.
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Szoftverfejleszt%C5%91%20informatikus%20specializ%C3%A1ci%C3%B3/14.%20T%C3%A9tel/Programoz%C3%A1si%20technol%C3%B3gi%C3%A1k/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Programozási technológiák
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#alaptipusok-valtozok-konstansok-literalok" class="md-nav__link">
+    <span class="md-ellipsis">
+      Alaptípusok, változók, konstansok, literálok
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Alaptípusok, változók, konstansok, literálok">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#alaptipusok" class="md-nav__link">
+    <span class="md-ellipsis">
+      Alaptípusok
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#valtozok" class="md-nav__link">
+    <span class="md-ellipsis">
+      Változók
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#konstansok" class="md-nav__link">
+    <span class="md-ellipsis">
+      Konstansok
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#literalok" class="md-nav__link">
+    <span class="md-ellipsis">
+      Literálok
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#operatorok" class="md-nav__link">
+    <span class="md-ellipsis">
+      Operátorok
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Operátorok">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#aritmetikai-operatorok" class="md-nav__link">
+    <span class="md-ellipsis">
+      Aritmetikai operátorok
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#relacios-operatorok" class="md-nav__link">
+    <span class="md-ellipsis">
+      Relációs operátorok
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#logikai-operatorok" class="md-nav__link">
+    <span class="md-ellipsis">
+      Logikai operátorok
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bitmuveleti-operatorok" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bitműveleti operátorok
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#szelekcios-vezerlesi-szerkezetek" class="md-nav__link">
+    <span class="md-ellipsis">
+      Szelekciós vezérlési szerkezetek
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Szelekciós vezérlési szerkezetek">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#if-else-szerkezet" class="md-nav__link">
+    <span class="md-ellipsis">
+      If-else szerkezet
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#switch-szerkezet" class="md-nav__link">
+    <span class="md-ellipsis">
+      Switch szerkezet
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ciklusok" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ciklusok
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Ciklusok">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#for-ciklus" class="md-nav__link">
+    <span class="md-ellipsis">
+      For ciklus
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#while-ciklus" class="md-nav__link">
+    <span class="md-ellipsis">
+      While ciklus
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#do-while-ciklus" class="md-nav__link">
+    <span class="md-ellipsis">
+      Do-while ciklus
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ertek-es-referenciatipusok-memoriamenedzsmentje-stack-es-heap" class="md-nav__link">
+    <span class="md-ellipsis">
+      Érték- és referenciatípusok memóriamenedzsmentje, stack és heap
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Érték- és referenciatípusok memóriamenedzsmentje, stack és heap">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ertektipusok" class="md-nav__link">
+    <span class="md-ellipsis">
+      Értéktípusok
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#referenciatipusok" class="md-nav__link">
+    <span class="md-ellipsis">
+      Referenciatípusok
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#valtozok-hataskore-es-elettartama" class="md-nav__link">
+    <span class="md-ellipsis">
+      Változók hatásköre és élettartama
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Változók hatásköre és élettartama">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#hataskor-scope" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hatáskör (Scope)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#elettartam-lifetime" class="md-nav__link">
+    <span class="md-ellipsis">
+      Élettartam (Lifetime)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#programozasi-nyelvek-generacioi" class="md-nav__link">
+    <span class="md-ellipsis">
+      Programozási nyelvek generációi
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Programozási nyelvek generációi">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#elso-generacios-nyelvek-1gl" class="md-nav__link">
+    <span class="md-ellipsis">
+      Első generációs nyelvek (1GL)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#masodik-generacios-nyelvek-2gl" class="md-nav__link">
+    <span class="md-ellipsis">
+      Második generációs nyelvek (2GL)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#harmadik-generacios-nyelvek-3gl" class="md-nav__link">
+    <span class="md-ellipsis">
+      Harmadik generációs nyelvek (3GL)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#negyedik-generacios-nyelvek-4gl" class="md-nav__link">
+    <span class="md-ellipsis">
+      Negyedik generációs nyelvek (4GL)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#otodik-generacios-nyelvek-5gl" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ötödik generációs nyelvek (5GL)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#imperativ-es-deklarativ-nyelvek" class="md-nav__link">
+    <span class="md-ellipsis">
+      Imperatív és deklaratív nyelvek
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Imperatív és deklaratív nyelvek">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#imperativ-nyelvek" class="md-nav__link">
+    <span class="md-ellipsis">
+      Imperatív nyelvek
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deklarativ-nyelvek" class="md-nav__link">
+    <span class="md-ellipsis">
+      Deklaratív nyelvek
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+<h1 id="magasszintu-programozasi-nyelvek-i">Magasszintű programozási nyelvek I</h1>
+<h2 id="alaptipusok-valtozok-konstansok-literalok">Alaptípusok, változók, konstansok, literálok</h2>
+<h3 id="alaptipusok">Alaptípusok</h3>
+<p>Az alaptípusok azok a legegyszerűbb adattípusok, amelyeket a programozási nyelvek biztosítanak. Ezek közé tartoznak:</p>
+<ul>
+<li><strong>Egész számok (Integer)</strong>: pl. <code>int</code> típus</li>
+<li><strong>Valós számok (Floating-point)</strong>: pl. <code>float</code>, <code>double</code> típus</li>
+<li><strong>Logikai értékek (Boolean)</strong>: pl. <code>bool</code> típus</li>
+<li><strong>Karakterek (Character)</strong>: pl. <code>char</code> típus</li>
+<li><strong>Szövegek (String)</strong>: pl. <code>string</code> típus</li>
+</ul>
+<h3 id="valtozok">Változók</h3>
+<p>A változók olyan névvel ellátott memóriaterületek, amelyek értéket tárolnak, és amelyeket a program futása során módosíthatunk.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nb">int</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nb">float</span> <span class="n">b</span> <span class="o">=</span> <span class="mf">3.14</span><span class="p">;</span>
+</span></code></pre></div>
+<h3 id="konstansok">Konstansok</h3>
+<p>A konstansok olyan névvel ellátott memóriaterületek, amelyek értéke a program futása során nem változtatható meg.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">const</span> <span class="nb">int</span> <span class="n">MAX_VALUE</span> <span class="o">=</span> <span class="mi">100</span><span class="p">;</span>
+</span></code></pre></div>
+<h3 id="literalok">Literálok</h3>
+<p>A literálok közvetlenül az értékeket képviselik a kódban.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="mi">42</span>        <span class="o">//</span> <span class="n">egész</span> <span class="n">szám</span> <span class="n">literál</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="mf">3.14</span>      <span class="o">//</span> <span class="n">valós</span> <span class="n">szám</span> <span class="n">literál</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="s1">&#39;c&#39;</span>       <span class="o">//</span> <span class="n">karakter</span> <span class="n">literál</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="s2">&quot;hello&quot;</span>   <span class="o">//</span> <span class="n">szöveg</span> <span class="n">literál</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="n">true</span>      <span class="o">//</span> <span class="n">logikai</span> <span class="n">literál</span>
+</span></code></pre></div>
+<h2 id="operatorok">Operátorok</h2>
+<p>Az operátorok olyan speciális szimbólumok, amelyekkel műveleteket végezhetünk az operandusokon.</p>
+<h3 id="aritmetikai-operatorok">Aritmetikai operátorok</h3>
+<ul>
+<li><strong>Összeadás (+)</strong>: <code>a + b</code></li>
+<li><strong>Kivonás (-)</strong>: <code>a - b</code></li>
+<li><strong>Szorzás (*)</strong>: <code>a * b</code></li>
+<li><strong>Osztás (/)</strong>: <code>a / b</code></li>
+<li><strong>Maradékos osztás (%)</strong>: <code>a % b</code></li>
+</ul>
+<h3 id="relacios-operatorok">Relációs operátorok</h3>
+<ul>
+<li><strong>Egyenlő (==)</strong>: <code>a == b</code></li>
+<li><strong>Nem egyenlő (!=)</strong>: <code>a != b</code></li>
+<li><strong>Kisebb (&lt;)</strong>: <code>a &lt; b</code></li>
+<li><strong>Nagyobb (&gt;)</strong>: <code>a &gt; b</code></li>
+<li><strong>Kisebb vagy egyenlő (&lt;=)</strong>: <code>a &lt;= b</code></li>
+<li><strong>Nagyobb vagy egyenlő (&gt;=)</strong>: <code>a &gt;= b</code></li>
+</ul>
+<h3 id="logikai-operatorok">Logikai operátorok</h3>
+<ul>
+<li><strong>És (&amp;&amp;)</strong>: <code>a &amp;&amp; b</code></li>
+<li><strong>Vagy (||)</strong>: <code>a || b</code></li>
+<li><strong>Negáció (!) </strong>: <code>!a</code></li>
+</ul>
+<h3 id="bitmuveleti-operatorok">Bitműveleti operátorok</h3>
+<ul>
+<li><strong>És (&amp;)</strong>: <code>a &amp; b</code></li>
+<li><strong>Vagy (|)</strong>: <code>a | b</code></li>
+<li><strong>Exkluzív vagy (^)</strong>: <code>a ^ b</code></li>
+<li><strong>Balra tolás (&lt;&lt;)</strong>: <code>a &lt;&lt; 1</code></li>
+<li><strong>Jobbra tolás (&gt;&gt;)</strong>: <code>a &gt;&gt; 1</code></li>
+</ul>
+<h2 id="szelekcios-vezerlesi-szerkezetek">Szelekciós vezérlési szerkezetek</h2>
+<p>A szelekciós vezérlési szerkezetek lehetővé teszik a program számára, hogy különböző utasításokat hajtson végre attól függően, hogy egy feltétel igaz vagy hamis.</p>
+<h3 id="if-else-szerkezet">If-else szerkezet</h3>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="k">if</span> <span class="p">(</span><span class="n">feltétel</span><span class="p">)</span> <span class="p">{</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>    <span class="o">//</span> <span class="n">kódblokk</span><span class="p">,</span> <span class="n">ha</span> <span class="n">a</span> <span class="n">feltétel</span> <span class="n">igaz</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>    <span class="o">//</span> <span class="n">kódblokk</span><span class="p">,</span> <span class="n">ha</span> <span class="n">a</span> <span class="n">feltétel</span> <span class="n">hamis</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="p">}</span>
+</span></code></pre></div>
+<h3 id="switch-szerkezet">Switch szerkezet</h3>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="n">switch</span> <span class="p">(</span><span class="n">kifejezés</span><span class="p">)</span> <span class="p">{</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>    <span class="k">case</span> <span class="n">érték1</span><span class="p">:</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>        <span class="o">//</span> <span class="n">kódblokk</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>        <span class="k">break</span><span class="p">;</span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>    <span class="k">case</span> <span class="n">érték2</span><span class="p">:</span>
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>        <span class="o">//</span> <span class="n">kódblokk</span>
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>        <span class="k">break</span><span class="p">;</span>
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>    <span class="n">default</span><span class="p">:</span>
+</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>        <span class="o">//</span> <span class="n">alapértelmezett</span> <span class="n">kódblokk</span>
+</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="p">}</span>
+</span></code></pre></div>
+<h2 id="ciklusok">Ciklusok</h2>
+<p>A ciklusok lehetővé teszik, hogy egy kódrészlet többször ismétlődjön.</p>
+<h3 id="for-ciklus">For ciklus</h3>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="k">for</span> <span class="p">(</span><span class="n">kezdet</span><span class="p">;</span> <span class="n">feltétel</span><span class="p">;</span> <span class="n">lépés</span><span class="p">)</span> <span class="p">{</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>    <span class="o">//</span> <span class="n">kódblokk</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="p">}</span>
+</span></code></pre></div>
+<h3 id="while-ciklus">While ciklus</h3>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="k">while</span> <span class="p">(</span><span class="n">feltétel</span><span class="p">)</span> <span class="p">{</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>    <span class="o">//</span> <span class="n">kódblokk</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="p">}</span>
+</span></code></pre></div>
+<h3 id="do-while-ciklus">Do-while ciklus</h3>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="n">do</span> <span class="p">{</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>    <span class="o">//</span> <span class="n">kódblokk</span>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="p">}</span> <span class="k">while</span> <span class="p">(</span><span class="n">feltétel</span><span class="p">);</span>
+</span></code></pre></div>
+<h2 id="ertek-es-referenciatipusok-memoriamenedzsmentje-stack-es-heap">Érték- és referenciatípusok memóriamenedzsmentje, stack és heap</h2>
+<h3 id="ertektipusok">Értéktípusok</h3>
+<p>Az értéktípusok olyan típusok, amelyek értékei közvetlenül a stack memóriában tárolódnak.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="nb">int</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>  <span class="o">//</span> <span class="n">x</span> <span class="n">közvetlenül</span> <span class="n">tárolja</span> <span class="n">az</span> <span class="n">értéket</span>
+</span></code></pre></div>
+<h3 id="referenciatipusok">Referenciatípusok</h3>
+<p>A referenciatípusok olyan típusok, amelyek értékei a heap memóriában tárolódnak, és a stack csak a hivatkozást (referenciát) tartalmazza.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="n">string</span> <span class="n">s</span> <span class="o">=</span> <span class="s2">&quot;hello&quot;</span><span class="p">;</span>  <span class="o">//</span> <span class="n">s</span> <span class="n">hivatkozás</span> <span class="n">a</span> <span class="n">heap</span><span class="o">-</span><span class="n">en</span> <span class="n">tárolt</span> <span class="n">értékre</span>
+</span></code></pre></div>
+<h2 id="valtozok-hataskore-es-elettartama">Változók hatásköre és élettartama</h2>
+<h3 id="hataskor-scope">Hatáskör (Scope)</h3>
+<p>A hatáskör azt jelenti, hogy a változó mely részeken elérhető a kódban.</p>
+<ul>
+<li><strong>Lokális változók</strong>: Csak a deklarációs blokkon belül érhetők el.</li>
+<li><strong>Globális változók</strong>: Az egész programban elérhetők.</li>
+</ul>
+<h3 id="elettartam-lifetime">Élettartam (Lifetime)</h3>
+<p>A változó élettartama azt jelenti, hogy a változó meddig létezik a memóriában.</p>
+<ul>
+<li><strong>Statikus változók</strong>: A program teljes futási ideje alatt léteznek.</li>
+<li><strong>Automatikus változók</strong>: A blokkon belül jönnek létre és megsemmisülnek a blokk végén.</li>
+</ul>
+<h2 id="programozasi-nyelvek-generacioi">Programozási nyelvek generációi</h2>
+<h3 id="elso-generacios-nyelvek-1gl">Első generációs nyelvek (1GL)</h3>
+<ul>
+<li>Gépi kód, amely közvetlenül a hardveren fut.</li>
+</ul>
+<h3 id="masodik-generacios-nyelvek-2gl">Második generációs nyelvek (2GL)</h3>
+<ul>
+<li>Assembly nyelvek, amelyek az ember által olvasható mnemonikus kódokat használják.</li>
+</ul>
+<h3 id="harmadik-generacios-nyelvek-3gl">Harmadik generációs nyelvek (3GL)</h3>
+<ul>
+<li>Magasszintű nyelvek, mint például C, C++, Java, Python.</li>
+</ul>
+<h3 id="negyedik-generacios-nyelvek-4gl">Negyedik generációs nyelvek (4GL)</h3>
+<ul>
+<li>Magasabb szintű, domén specifikus nyelvek, mint például SQL, MATLAB.</li>
+</ul>
+<h3 id="otodik-generacios-nyelvek-5gl">Ötödik generációs nyelvek (5GL)</h3>
+<ul>
+<li>Problémamegoldó nyelvek, mint például Prolog, amelyek mesterséges intelligencia és logikai programozási megközelítéseket használnak.</li>
+</ul>
+<h2 id="imperativ-es-deklarativ-nyelvek">Imperatív és deklaratív nyelvek</h2>
+<h3 id="imperativ-nyelvek">Imperatív nyelvek</h3>
+<p>Az imperatív nyelvekben a programozó utasításokat ad a számítógépnek, hogy milyen lépéseket hajtson végre a cél elérése érdekében.</p>
+<ul>
+<li><strong>Példák</strong>: C, C++, Java</li>
+</ul>
+<h3 id="deklarativ-nyelvek">Deklaratív nyelvek</h3>
+<p>A deklaratív nyelvekben a programozó megadja, hogy mit szeretne elérni, nem pedig azt, hogy hogyan érje el.</p>
+<ul>
+<li><strong>Példák</strong>: SQL, HTML, Prolog</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      © 2024 csicsi2000, <a href="https://www.flaticon.com/free-icons/study" title="study icons">Study icons created by Mihimihi - Flaticon</a>
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["search.suggest", "search.highlight", "content.tabs.link", "content.code.annotation", "content.code.copy"], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.ad660dcc.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
