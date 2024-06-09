@@ -1,55 +1,56 @@
-# Szolgáltatás orientált programozás
+### Hálózati architektúrák és protokollok
 
-## Az RPC architektúrája, működési elve, jellemzői
+#### Csomagkapcsolt hálózatok működése
+A csomagkapcsolt hálózatokban az adatokat kisebb csomagokra bontják, és ezek a csomagok függetlenül haladhatnak át a hálózaton. Minden csomag tartalmazza a címzési információkat, amelyek lehetővé teszik a célállomásra való szállítást.
 
-- **Architektúra**: Az RPC (Remote Procedure Call) egy olyan architektúra, amely lehetővé teszi a távoli számítógépek közötti kommunikációt úgy, mintha lokálisan hívnánk meg eljárásokat.
-- **Működési elv**: Az RPC-n keresztül a kliens számára úgy tűnik, mintha a távoli szerveren futó eljárásokat helyben hívná meg.
-- **Jellemzők**: Egyszerűség, gyorsaság, a fejlesztők számára ismerős programozási modell.
+- **Előnyök**:
+  - Hatékony sávszélesség-kihasználás
+  - Hibajavítás és adatvesztés csökkentése
+  - Skálázhatóság
+- **Működés**:
+  - Csomagok különböző útvonalakon haladhatnak
+  - Csomagok összerakása a célállomáson
 
-## A Google RPC működési elve, jellemzői
+#### OSI és TCP/IP modell összehasonlítása
 
-- **Működési elv**: A Google RPC egy nyílt forráskódú RPC rendszer, amelyet a Google fejlesztett ki, és a Protobuf (Protocol Buffers) nyelvet használja az üzenetek átvitelére.
-- **Jellemzők**: Hatékonyság, skálázhatóság, támogatás több különböző nyelvhez és platformhoz.
+| OSI modell | TCP/IP modell |
+| --- | --- |
+| 7 réteg (Alkalmazási, Megjelenítési, Viszonylati, Szállítási, Hálózati, Adatkapcsolati, Fizikai) | 4 réteg (Alkalmazási, Szállítási, Internet, Hálózati hozzáférés) |
+| Elméleti modell, amely segít megérteni és tervezni a hálózatokat | Gyakorlati modell, amely ténylegesen alkalmazásban van |
+| Nagyobb részletezettség | Egyszerűbb és gyakorlatiasabb |
 
-## A protocol buffers szerepe a gRPC-ben
+#### Forgalomirányítási és IP címzési alapok
 
-- A Protocol Buffers egy platformfüggetlen interfészleíró nyelv, amelyet strukturált adatok leírására használnak.
-- A gRPC-ben a Protocol Buffers segítségével írják le az üzenetek struktúráját és az RPC szolgáltatás interfészeit.
+- **Forgalomirányítás (Routing)**:
+  - Az adatok útvonalának meghatározása a hálózaton keresztül
+  - Statikus és dinamikus forgalomirányítási protokollok (pl. RIP, OSPF, BGP)
+  
+- **IP címzés**:
+  - IPv4: 32 bites címek (pl. 192.168.1.1)
+  - IPv6: 128 bites címek (pl. 2001:0db8:85a3:0000:0000:8a2e:0370:7334)
+  - Privát és nyilvános IP címek
+  - Subnetting és CIDR (Classless Inter-Domain Routing)
 
-## A WEB, egyrétegű, kliens-szerver modell, többrétegű alkalmazások, vastag és vékony kliensek, elosztott rendszerek jellemzői
+#### Kapcsolódó protokollok
 
-- **WEB, egyrétegű, kliens-szerver modell**: A WEB egyrétegű kliens-szerver modellje azt jelenti, hogy a kliensek HTTP kéréseket küldenek a szervereknek, amelyek válaszolnak rájuk.
-- **Többrétegű alkalmazások**: Az alkalmazást rétegekre osztják fel, például prezentációs, üzleti logika és adatelérési rétegekre.
-- **Vastag és vékony kliensek**: A vastag kliensek sok üzleti logikát tartalmaznak, míg a vékony kliensek inkább csak a felhasználói felületet kezelik.
-- **Elosztott rendszerek jellemzői**: Skálázhatóság, rugalmasság, fejlett hibatűrés.
+- **TCP (Transmission Control Protocol)**:
+  - Kapcsolatorientált protokoll
+  - Megbízható adatátvitel (hibajavítás, adatvesztés kezelés)
+  - Szegmensekre bontás és újra összerakás
 
-## A REST tulajdonságai
+- **UDP (User Datagram Protocol)**:
+  - Kapcsolat nélküli protokoll
+  - Gyors, de kevésbé megbízható (nincs hibajavítás)
+  - Alkalmas valós idejű alkalmazásokhoz (pl. videostreaming, VoIP)
 
-- **Reprezentáció által vezérelt**: A kliens kéréseket küld a szervernek, és a válasz a kliens által kívánt reprezentációban érkezik.
-- **Állapot nélküliség**: Minden kérés tartalmazza az összes információt, amelyre a szervernek szüksége van a válaszhoz.
-- **Cache-elhetőség**: A válaszok cache-elhetők, hogy csökkentsék a hálózati forgalmat és növeljék a teljesítményt.
+- **ICMP (Internet Control Message Protocol)**:
+  - Hálózati diagnosztikai és hibajelentési protokoll
+  - Ping és traceroute parancsok alapja
 
-## A web service jellemzői
+- **DNS (Domain Name System)**:
+  - Domain nevek és IP címek közötti fordítás
+  - Hierarchikus és elosztott adatbázis rendszer
 
-- **Platformfüggetlenség**: A web service-eket különböző platformokon lehet kialakítani és használni.
-- **Interoperabilitás**: Különböző technológiák és nyelvek közötti kommunikációt tesz lehetővé.
-- **Szabványokon alapulás**: A web service-eket általában meghatározott szabványok és protokollok szerint tervezik és implementálják.
+---
 
-## A WCF architektúrája, az ASMX és a WCF közötti eltérések
-
-- **WCF architektúra**: A WCF (Windows Communication Foundation) egy Microsoft által fejlesztett keretrendszer, amely lehetővé teszi a különböző alkalmazások közötti kommunikációt. Az architektúra többféle kommunikációs protokollt és formátumot támogat.
-- **Az ASMX és a WCF közötti eltérések:
-
-- **ASMX (ASP.NET Web Services)**:
-  - Kizárólag SOAP alapú szolgáltatásokat támogat.
-  - Csak HTTP protokollt használ.
-  - Korlátozottabb konfigurációs és biztonsági lehetőségekkel rendelkezik.
-  - Kisebb rugalmasságot biztosít a szolgáltatások tervezése és implementálása terén.
-
-- **WCF (Windows Communication Foundation)**:
-  - Támogatja a többféle kommunikációs protokollt és formátumot, például SOAP, REST, TCP, HTTP stb.
-  - Rugalmasabb konfigurációs és biztonsági lehetőségeket kínál.
-  - Teljesítményben hatékonyabb és skálázhatóbb.
-  - Összetettebb fejlesztési modellt kínál, de nagyobb funkcionalitással és flexibilitással rendelkezik.
-
-A WCF tehát általánosabb, szélesebb körű funkcionalitást és integrációs lehetőségeket biztosít, míg az ASMX egyszerűbb és könnyebben kezelhető SOAP alapú szolgáltatásokhoz. A választás általában az alkalmazás igényeitől és a fejlesztési környezettől függ.
+Ezek az alapok segítenek megérteni a hálózati architektúrák és protokollok működését, valamint a csomagkapcsolt hálózatok alapelveit és a különböző protokollok szerepét a hálózati kommunikációban.
